@@ -1,3 +1,44 @@
+var botui = new BotUI('help-bot');
+
+botui.message.add({
+  delay: 500,
+  loading: true,
+  content: 'Welcome dear human. I am your Artificial Conformity Counselor.'
+}).then(function () {
+  return botui.message.add({
+    delay: 500,
+    loading: true,
+    content: 'Are you here to conform?'
+  });
+}).then(function () {
+  return botui.action.button({
+    action: [
+      {
+        text: 'Sure, yes',
+        value: 'sure'
+      },
+      {
+        text: 'Umm.. no thank you.',
+        value: 'umm'
+      }
+    ]
+  });
+}).then(function (res) {
+  var message;
+
+  if (res.value === "sure") {
+    message = 'Great! You\'re going to make a wonderful little cog!';
+  } else if (res.value === "umm") {
+    message = 'You\'re one of the funny flesh bags! I love when you odd ones resist!';
+  }
+
+  return botui.message.add({
+    type: 'html',
+    delay: 1000,
+    loading: true,
+    content: message
+  });
+}).then(function (index) {
   return botui.action.button({
     action: [
       {
