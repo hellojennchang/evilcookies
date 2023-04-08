@@ -145,6 +145,7 @@ function startNonConformityPath() {
     return startNonConformityPath2();
   }
 });
+} 
 function startNonConformityPath2() {
   return botui.message.add({
     delay: 1000,
@@ -158,7 +159,7 @@ function startNonConformityPath2() {
               value: 'admire'
             },
             {
-              text: 'That\'s weak. I\'m not going to follow the herd. ',
+              text: 'That\'s weak. I\'m not going to follow the herd. ',
               value: 'weak'
             }
           ]
@@ -193,6 +194,7 @@ function startNonConformityPath2() {
             return startNonConformityPath3();
   }
 });
+}
 function startNonConformityPath3() {
   return botui.message.add({
     delay: 1000,
@@ -238,9 +240,10 @@ function startNonConformityPath3() {
             }
           });
         } else if (res.value === "absolutely") {
-return startNonConformityPath4();
-  }
-});
+          return startNonConformityPath4();
+        }
+      });
+}
 function startNonConformityPath4() {
   return botui.message.add({
     delay: 1000,
@@ -289,6 +292,8 @@ function startNonConformityPath4() {
         return startNonConformityPath5();
   }
 });
+}
+
 function startNonConformityPath5() {
   return botui.message.add({
     delay: 1000,
@@ -355,4 +360,5 @@ function startNonConformityPath5() {
         }
       });
     }
-  }
+}
+ 
