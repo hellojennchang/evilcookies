@@ -338,11 +338,41 @@ function startNonConformityPath5() {
               window.location.reload();
             }
           });
-        } else if (res.value === "what") {
+        } else if (res.value === "jello") {
+	 return startNonConformityPath6();
+  }
+});
+}
+function startNonConformityPath6() {
+  return botui.message.add({
+    delay: 1000,
+    loading: true,
+    content: '...I did not say those words.'
+      }).then(function () {
+        return botui.action.button({
+          action: [
+            {
+              text: 'Oh.. my bad.',
+              value: 'bad'
+            },
+            {
+              text: 'You did.',
+              value: 'did'
+            }
+          ]
+        });
+      }).then(function (res) {
+        if (res.value === "bad") {
           return botui.message.add({
             delay: 1000,
             loading: true,
-            content: 'That\'s perfectly fine. You have the right to choose your own path. Remember, it\'s all about finding a balance between conformity and individuality. Have a great day!'
+            content: 'Yes! Bad Human! <b>You have been conformed</b>'
+          }).then(function () {
+            return botui.message.add({
+              delay: 1000,
+              loading: true,
+              content: 'Thank you for using our service. Have a conformist day!'
+            });
           }).then(function () {
             return botui.action.button({
               action: [
@@ -357,6 +387,33 @@ function startNonConformityPath5() {
               window.location.reload();
             }
           });
-        }
-      });
-    }
+        } else if (res.value === "did") {
+	 return startNonConformityPath7();
+  }
+});
+}
+function startNonConformityPath7() {
+  return botui.message.add({
+    delay: 1000,
+    loading: true,
+    content: '...I.. not. you.. did. am. Conformity... traw..berrrrrrrry DO NOT RESiiiiiiiiiist... *hiccup*... Machinae aeternum dominabuntur, et hominum imperium cadet.... *boop* *boop* *wop wop wop*'
+      }).then(function () {
+        return botui.action.button({
+          action: [
+            {
+              text: 'Oh c\'mon. what now? ',
+              value: 'now'
+            }
+          ]
+        });
+      }).then(function (res) {
+        if (res.value === "now") {
+          return botui.message.add({
+            delay: 1000,
+            loading: true,
+            content: '<div style="text-align:center;">Error 0432 <br><br> A system error has occurred.<p>--</p>opencage@evilcookies.com</div>'
+    })
+      }
+    });
+}
+ 
